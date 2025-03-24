@@ -1,0 +1,32 @@
+Zookeeper's Challenge Design Document
+
+Program includes arrivingAnimals.txt, animalNames.txt is yet to be implemented
+The goal of this program is to use File I/O to open the arrivingAnimals.txt file
+parse through the file line by line while extracting relevant information,
+use File I/O again to open animalNames.txt and for every line parsed through arrivingAnimals.txt
+apply a name from animalNames.txt to a newly created animal object.
+This newly named animal object will then be sorted according to species into it's relevant habitat.
+finally each habitat will print out the newly added animals as well as the information relevant to each.
+
+Components:
+
+Functions: 
+
+File reading function: There is a file reading function which parses through a file located on my desktop.
+this function separates strings using the comma delimiter(some parsed chunks can be used in whole), 
+erases any empty spaces that are leading the string, 
+then appends them to a new vector string array.
+There is then a "stringstream" set up which parses through each vector string pulling specific words.
+These strings are then added as data to objects which are created by the parent class.
+There is an inside function which creates a unique ID for each animal.
+There is also a function which updates the number of animals for each species. 
+There will be a later function which creates dates.
+
+File output function:
+Eventually this function will print the contents of each animal in each habitat, displaying their ID, names and other various data.  
+ 
+
+Parent class Animal: This class has a constructor which creates an object of type Animal.
+the objects contained within all correspond to items which are obtained by parsing through a file.
+
+Sub class "one for each species": There is a subclass for every species which will also contain a Map of Names associated with pointers to animal objects. Each Object will contain a unique ID as well as all relevant information required to print out on the new file.
